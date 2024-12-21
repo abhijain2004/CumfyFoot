@@ -15,7 +15,7 @@ import SignUp from "./components/SignUp";
 function App() {
 
   const dispatch = useDispatch();
- const url = window.env.API_URL;
+  const url=process.env.API_URL;
   const checkAuth = async () => {
     
     try {
