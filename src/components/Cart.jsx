@@ -15,8 +15,7 @@ function Cart(){
 const [open, setOpen] = useState(false);
 const handleOpen = () => setOpen(!open);
 const[buyItems,setBuyItems]=useState([]);
-const url=process.env.API_URL;
-
+const url = import.meta.env.VITE_API_URL;
 const {isAuth}=useSelector((state)=>state.nav);
 
 const cartValue= async ()=>{

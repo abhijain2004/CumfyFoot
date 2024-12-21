@@ -15,7 +15,7 @@ import SignUp from "./components/SignUp";
 function App() {
 
   const dispatch = useDispatch();
-  const url=process.env.API_URL;
+  const url = import.meta.env.VITE_API_URL;
   const checkAuth = async () => {
     
     try {

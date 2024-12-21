@@ -20,7 +20,7 @@ function SignIn() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen((cur) => !cur);
   const navigate=useNavigate(); 
-  const url=process.env.API_URL;
+  const url = import.meta.env.VITE_API_URL;
   
   const emailElement=useRef();
   const passElement=useRef();

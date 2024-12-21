@@ -21,7 +21,7 @@ const Feedback = () => {
     },
     missingFeatures: "",
   });
-  const url=process.env.API_URL;
+  const url = import.meta.env.VITE_API_URL;
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [errors, setErrors] = useState({}); // State to track validation errors
 

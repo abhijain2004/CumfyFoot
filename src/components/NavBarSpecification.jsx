@@ -20,7 +20,7 @@ function NavBarSpecification() {
   const [arr, setArr] = useState([]);
   const [originalArr, setOriginalArr] = useState([]);
   const [loading, setLoading] = useState(true);  // Loading state
-  const baseUrl=process.env.API_URL;
+  const baseUrl= import.meta.env.VITE_API_URL;
 
   const sortedItem = (value) => {
     const a3 = JSON.parse(localStorage.getItem("navBar"))|| originalArr;

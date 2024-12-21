@@ -19,7 +19,7 @@ function ItemSpecification() {
   const [wishlist,setWish]=useState([]);
   const navigate = useNavigate();
   const list = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
-  const baseUrl=process.env.API_URL;
+  const baseUrl = import.meta.env.VITE_API_URL;
   const url=`${baseUrl}/item/${idValue}`;
 
 

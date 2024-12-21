@@ -19,7 +19,7 @@ function FilteredProducts() {
   const [loading, setLoading] = useState(true); // Add loading state
   const dispatch = useDispatch();
   const [sortOption, setSortOption] = useState("Recommended");
-  const baseUrl=process.env.API_URL;
+  const baseUrl= import.meta.env.VITE_API_URL;
   const url = `${baseUrl}/product/${value}`;
   const navigate = useNavigate();
 
