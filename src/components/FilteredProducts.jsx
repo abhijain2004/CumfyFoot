@@ -23,7 +23,7 @@ function FilteredProducts() {
   const url = `${baseUrl}/product/${value}`;
   const navigate = useNavigate();
 
-  console.log(process.env.API_URL);
+
   const filteredProducts = async () => {
     setLoading(true); // 
     try {
