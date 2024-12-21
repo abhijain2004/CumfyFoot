@@ -19,7 +19,7 @@ const SignUp = () => {
   
   const emailElement=useRef();
   const passElement=useRef();
-
+  const url=process.env.API_URL;
   const navigate=useNavigate();
 
   const onSubmit= async (event)=>{
@@ -31,7 +31,7 @@ const SignUp = () => {
         password:passElement.current.value
       }
       // Replace with your backend URL
-      const response = await axios.post('http://localhost:8080/signup', formData);
+      const response = await axios.post(`${url}/signup `, formData);
       console.log('Response from server:', response.data);
       alert('Account created successfully!');
     } catch (error) {

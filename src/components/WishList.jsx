@@ -20,6 +20,7 @@ const handleOpen = () => setOpen(!open);
 const navigate=useNavigate();
 const dispatch=useDispatch();
 const [wishlist,setWish]=useState([]);
+const url=process.env.API_URL;
 const handleCross=()=>{
   setOpen(false);
   }
@@ -27,7 +28,7 @@ const handleCross=()=>{
  
   const wishProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/wish",{
+      const response = await axios.get(`${url}/wish`,{
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,

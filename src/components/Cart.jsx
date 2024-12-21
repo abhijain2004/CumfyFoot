@@ -15,13 +15,13 @@ function Cart(){
 const [open, setOpen] = useState(false);
 const handleOpen = () => setOpen(!open);
 const[buyItems,setBuyItems]=useState([]);
-
+const url=process.env.API_URL;
 
 const {isAuth}=useSelector((state)=>state.nav);
 
 const cartValue= async ()=>{
   try{
-  const response=await axios.get("http://localhost:8080/cart",{
+  const response=await axios.get(`${url}/cart`,{
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -38,7 +38,7 @@ const cartValue= async ()=>{
 
 const handleDelete=async(id)=>{
   try{
-  await axios.delete(`http://localhost:8080/cart/${id}`,{
+  await axios.delete(`${url}/cart/${id}`,{
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("token")}`,

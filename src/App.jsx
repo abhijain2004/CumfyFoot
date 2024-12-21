@@ -11,14 +11,15 @@ import { NavAction } from "./store/NavSlice";
 import { useSelector } from "react-redux";
 import SignUp from "./components/SignUp";
 
+
 function App() {
 
   const dispatch = useDispatch();
-
+ const url = window.env.API_URL;
   const checkAuth = async () => {
     
     try {
-      const response = await axios.get("http://localhost:8080/validate", {
+      const response = await axios.get(`${url}/validate`, {
          headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -31,7 +32,6 @@ function App() {
       dispatch(NavAction.authentication({isAuth:false,email:""}));
     }
   };
-
   useEffect(() => {
     checkAuth(); // Call the async function directly
   }, []); // Empty dependency array to run only once on mount

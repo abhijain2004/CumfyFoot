@@ -21,7 +21,7 @@ const Feedback = () => {
     },
     missingFeatures: "",
   });
-
+  const url=process.env.API_URL;
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [errors, setErrors] = useState({}); // State to track validation errors
 
@@ -68,7 +68,7 @@ const Feedback = () => {
       setIsFormVisible(false);
       try {
         axios
-          .post("http://localhost:8080/feedback", formData, {
+          .post(`${url}/feedback`, formData, {
             headers: {
               "Content-Type": "application/json",
               Authorization: `Bearer ${localStorage.getItem("token")}`,

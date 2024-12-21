@@ -20,7 +20,7 @@ function SignIn() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen((cur) => !cur);
   const navigate=useNavigate(); 
-  
+  const url=process.env.API_URL;
   
   const emailElement=useRef();
   const passElement=useRef();
@@ -46,7 +46,7 @@ function SignIn() {
       }
       
       // Replace with your backend URL
-      const response = await axios.post('http://localhost:8080/login', formData);
+      const response = await axios.post(`${url}/login`, formData);
       localStorage.setItem('token', response.data.token);
       alert('Login successful!');
       setOpen(false);

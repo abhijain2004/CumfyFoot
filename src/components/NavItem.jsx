@@ -15,8 +15,8 @@ import { useEffect } from "react";
 
 function ItemSpecification(){
   const { idValue } = useSelector((state) => state.state);
-  
-  const url=`http://localhost:8080/item/${idValue}`;
+  const baseUrl=process.env.API_URL;
+  const url=`${baseUrl}/item/${idValue}`;
   const dispatch=useDispatch();
   const[size,setSize]=useState("");
   const[color,setColor]=useState("");
@@ -26,7 +26,7 @@ function ItemSpecification(){
   const handleButton=async (value)=>{
     
     const obj = { realId:value,size:size,color:color,amount:amount };
-    const response = await axios.post("http://localhost:8080/cart", obj,{
+    const response = await axios.post(`${baseUrl}/cart`, obj,{
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -43,7 +43,7 @@ function ItemSpecification(){
   
 
   const handleFilled = async(id) => {
-    const response = await axios.post("http://localhost:8080/wish",{realId:id},{
+    const response = await axios.post(`${baseUrl}/wish`,{realId:id},{
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -54,7 +54,7 @@ function ItemSpecification(){
   };
 
   const handleEmpty = async (id) => {
-    const response = await axios.delete(`http://localhost:8080/wish/${id}`,{
+    const response = await axios.delete(`${baseUrl}/wish/${id}`,{
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -67,7 +67,7 @@ function ItemSpecification(){
 
   const wishProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/wish",{
+      const response = await axios.get(`${baseUrl}/wish`,{
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,

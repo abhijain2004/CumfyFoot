@@ -19,9 +19,11 @@ function FilteredProducts() {
   const [loading, setLoading] = useState(true); // Add loading state
   const dispatch = useDispatch();
   const [sortOption, setSortOption] = useState("Recommended");
-  const url = `http://localhost:8080/product/${value}`;
+  const baseUrl=process.env.API_URL;
+  const url = `${baseUrl}/product/${value}`;
   const navigate = useNavigate();
 
+  console.log(process.env.API_URL);
   const filteredProducts = async () => {
     setLoading(true); // 
     try {

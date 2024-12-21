@@ -20,6 +20,7 @@ function NavBarSpecification() {
   const [arr, setArr] = useState([]);
   const [originalArr, setOriginalArr] = useState([]);
   const [loading, setLoading] = useState(true);  // Loading state
+  const baseUrl=process.env.API_URL;
 
   const sortedItem = (value) => {
     const a3 = JSON.parse(localStorage.getItem("navBar"))|| originalArr;
@@ -42,7 +43,7 @@ function NavBarSpecification() {
   const filteredProducts = async () => {
     setLoading(true);  // Set loading to true before the request
     try {
-      const response = await axios.get(`http://localhost:8080/cumfy/${title}`,{
+      const response = await axios.get(`${baseUrl}/cumfy/${title}`,{
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
