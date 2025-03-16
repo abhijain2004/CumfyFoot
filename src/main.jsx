@@ -12,6 +12,7 @@ import NavBarSpecification from './components/NavBarSpecification.jsx'
 import NavItem from './components/NavItem.jsx'
 import SignUp from './components/SignUp.jsx'
 import SearchScreen from './components/SearchScreen.jsx'
+import SignIn from './components/SignIn.jsx'
 
 const router=createBrowserRouter([
   {

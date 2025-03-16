@@ -14,6 +14,7 @@ import Footer from "./Footer";
 import { useRef } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import SignIn from "./SignIn";
 
 const SignUp = () => {
   
@@ -73,6 +74,17 @@ const SignUp = () => {
             <Button variant="gradient" type="submit" fullWidth>
               Sign Up
             </Button>
+            <Typography variant="small" className="mt-4 flex justify-center">
+                          Already have an account?
+                          <Typography
+                           
+                            variant="small"
+                            color="blue-gray"
+                            className="ml-1 font-bold"
+                          >
+                            Click on Profile button to SignIn
+              </Typography>
+              </Typography>
           </CardFooter>
         </Card>
         </form>
