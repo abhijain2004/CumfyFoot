@@ -43,7 +43,7 @@ const SignUp = () => {
     navigate("/");
   }
 
-  return <>
+  return <div className="w-fit sm:w-full">
   <NavBar></NavBar>
       <form onSubmit={onSubmit}>
       <Card className="mx-auto min-w-[330px] w-[50%] mt-8 border-t-2 mb-8">
@@ -74,22 +74,22 @@ const SignUp = () => {
             <Button variant="gradient" type="submit" fullWidth>
               Sign Up
             </Button>
-            <Typography variant="small" className="mt-4 flex justify-center">
+            <Typography variant="small" className="mt-4 text-[10px] flex gap-2 items-center md:text-[14px] justify-center">
                           Already have an account?
                           <Typography
                            
                             variant="small"
                             color="blue-gray"
-                            className="ml-1 font-bold"
+                            className="font-bold"
                           >
-                            Click on Profile button to SignIn
+                            Click on Profile button
               </Typography>
               </Typography>
           </CardFooter>
         </Card>
         </form>
         <Footer></Footer>
-        </>
+        </div>
   
 };
 

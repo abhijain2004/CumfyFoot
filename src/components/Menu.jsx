@@ -32,5 +32,6 @@ export function MenuDefault({email}) {
         <Button className="w-full mt-4" onClick={handleButton}>Logout</Button>
       </MenuList>
     </Menu>
+    
   );
 }

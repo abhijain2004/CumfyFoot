@@ -59,7 +59,7 @@ function SignIn() {
  
   return (
     <>
-    <CgProfile onClick={handleOpen} className="text-6xl cursor-pointer"/>
+    <CgProfile onClick={handleOpen} className=" text-5xl lg:text-6xl cursor-pointer"/>
     
       <Dialog
         size="xs"

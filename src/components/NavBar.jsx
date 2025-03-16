@@ -219,7 +219,7 @@ function NavBar() {
 
       {!isAuth && (
         <>
-          <nav className="md:pl-4 h-20 font-sans font-semibold border-b-2 shadow-lg flex items-center justify-between sticky top-0 z-40 bg-white min-w-[440px] ">
+          <nav className="md:pl-4 h-20 font-sans font-semibold border-b-2 shadow-lg flex items-center justify-between sticky top-0 z-40 bg-white min-w-[400px] ">
             <div className="flex gap-6 items-center ">
               <img src={logo} className="h-20" />
               <ul
@@ -235,27 +235,13 @@ function NavBar() {
               </ul>
             </div>
             <div className="flex md:gap-5 items-center mr-8 gap-2">
-              <Input
-                type="text"
-                placeholder="Search For Products"
-                onClick={() => alert("Please Login First")}
-                className="!border !border-gray-300 bg-white text-gray-900 shadow-lg shadow-gray-900/5 ring-4 ring-transparent placeholder:text-gray-500 placeholder:opacity-100 focus:!border-gray-900 focus:!border-t-gray-900 focus:ring-gray-900/10"
-                labelProps={{
-                  className: "hidden",
-                }}
-                icon={<CiSearch className="w-4 cursor-pointer" />}
-                containerProps={{ className: "min-w-[140px]" }}
-              />
-
-              <WishList></WishList>
-              <Cart></Cart>
               <SignIn />
 
               <button
-                className="cursor-pointer laptop:hidden"
+                className="cursor-pointer laptop:hidden "
                 onClick={toggleNavbar}
               >
-                {mobileDrawerOpen ? <X /> : <Menu />}
+                {mobileDrawerOpen ? <X /> : <Menu className="size-12"/>}
               </button>
             </div>
           </nav>
