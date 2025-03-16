@@ -12,7 +12,7 @@ function Categories(){
   <h2 className="font-sans font-bold text-center text-3xl text-orange-700">SHOP BY CATEGORY</h2>
  <div className="grid md:grid-rows-3 grid-flow-col lg:grid-rows-2 grid-rows-4 gap-4 p-8 h-fit w-fit mx-auto">
   {itemsList.map((item)=>(
-    <Link key={item} to={"/filteredProducts/"+item.type}>
+    <Link key={item.image} to={"/filteredProducts/"+item.type}>
     <div className=" mt-2 mb-8 border-2 rounded h-fit w-48 hover:scale-110 cursor-pointer  border-gray-400 transition-all relative" onClick={()=>dispatch(stateAction.getValue(item.type))} >
       <img src={item.image} className=" rounded  object-fil shadow-lg h-64 w-48 " />
       <div className="absolute bottom-5 bg-red-600 px-2 text-center">{item.type}</div>

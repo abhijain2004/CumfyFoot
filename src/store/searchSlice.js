@@ -1,22 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { storeData } from "../assets/data/dummyData";
+
 
 const searchSlice = createSlice({
   name: "search",
   initialState: {
     searchItem: [],
+    storeData:[],
   },
   reducers: {
+    setValue: (state, action) => {
+      state.storeData = action.payload;
+      state.searchItem=state.storeData;
+    },
     findValue: (state, action) => {
       const searchTerm = action.payload.toLowerCase().trim();
-
+      //The .trim() method in JavaScript removes whitespace characters (spaces, tabs, newlines) from both the beginning and end of a string.
       
-      const keywords = searchTerm.split(" ");
-      let filtered = storeData.filter((product) => {
-        const productName = product["name"].toLowerCase();
-        return keywords.some((keyword) => productName.includes(keyword));
+      let filtered = state.storeData.filter((product) => {
+        const productName = product["type"].toLowerCase();
+        
+        
+        return productName.includes(searchTerm);
       });
-
       
       state.searchItem = filtered;
     },

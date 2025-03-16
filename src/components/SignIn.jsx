@@ -91,11 +91,7 @@ function SignIn() {
             <Typography className="-mb-2" variant="h6">
               Your Password
             </Typography>
-            <Input inputRef={passElement} label="Password" size="lg" />
-            <div className="-ml-2.5 -mt-3">
-              <Checkbox checked={rememberMe}
-              onChange={handleCheckboxChange} label="Remember Me" />
-            </div>
+            <Input inputRef={passElement} label="Password" type="password" size="lg" />
             
           </CardBody>
           

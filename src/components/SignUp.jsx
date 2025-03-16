@@ -67,7 +67,7 @@ const SignUp = () => {
             <Typography className="-mb-2" variant="h6">
               Your Password
             </Typography>
-            <Input inputRef={passElement} label="Password" size="lg" />
+            <Input inputRef={passElement} label="Password" type="password" size="lg" />
           </CardBody>
           <CardFooter className="pt-0">
             <Button variant="gradient" type="submit" fullWidth>

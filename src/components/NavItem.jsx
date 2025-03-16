@@ -15,6 +15,7 @@ import { useEffect } from "react";
 
 function ItemSpecification(){
   const { idValue } = useSelector((state) => state.state);
+  console.log(idValue);
   const baseUrl= import.meta.env.VITE_API_URL;
   const url=`${baseUrl}/item/${idValue}`;
   const dispatch=useDispatch();

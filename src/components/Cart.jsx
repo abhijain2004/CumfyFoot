@@ -26,7 +26,6 @@ const cartValue= async ()=>{
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   });
-  console.log(response.data);
   
   setBuyItems(response.data);
   }catch(err){
@@ -62,7 +61,8 @@ const handleDelete=async(id)=>{
     }
   });
   const myset = Array.from(uniqueItems.values());
-
+  myset.reverse();
+  
 const handleCross=()=>{
   setOpen(false);
   }
@@ -110,7 +110,7 @@ const handleCross=()=>{
          <DialogBody className="flex flex-col h-[30rem] overflow-y-auto ">
            {myset.map((item)=>{
              
-           return <div className=" flex mb-6 p-4">
+           return <div key={item.id} className=" flex mb-6 p-4">
               <div className="w-[50%]">
 
               <div>

@@ -45,7 +45,9 @@ return <div className="slider mt-6">
 
 <div className="absolute bottom-8 right-1/2 left-1/2">
 <div className="flex  gap-4 justify-center">
-  {sliderData.map((obj)=>(val==obj.id?<Badge color="green" className="cursor-pointer" onClick={()=>handleSwiper(obj.id)} key={obj.id}></Badge>:<Badge className="cursor-pointer" color="white"onClick={()=>handleSwiper(obj.id)} key={obj.id}></Badge>))}
+  {sliderData.map((obj)=>(val==obj.id?<Badge  color="green" className="cursor-pointer" onClick={()=>handleSwiper(obj.id)} key={obj.id}>
+  </Badge>:<Badge className="cursor-pointer" color="white"onClick={()=>handleSwiper(obj.id)} key={obj.id}>
+  </Badge>))}
 </div>
 
 </div>
